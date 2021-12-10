@@ -1,0 +1,28 @@
+{
+  "name": "easy-typescript",
+  "version": "1.0.0",
+  "description": "master-typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "mocha -r ts-node/register src/tests/**/*.test.ts",
+    "copy": "cp package.json lib/ && cp README.md lib/",
+    "dist": "npm run build && npm run copy && cd ./lib && npm publish",
+    "start": "ts-node ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@newgitlab.novarto.com:easy-typescript/master-typescript.git"
+  },
+  "author": "Bozhidar Rusev",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.6.1",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  }
+}
